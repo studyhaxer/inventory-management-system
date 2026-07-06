@@ -166,7 +166,7 @@ inventory-management-system/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/inventory-management-system.git
+git clone https://github.com/studyhaxer/inventory-management-system.git
 ```
 
 ```
@@ -357,10 +357,10 @@ git push origin feature/your-feature
 Backend Developer | Python | FastAPI | React
 
 GitHub:
-> https://github.com/your-username
+> GitHub: https://github.com/studyhaxer
 
 LinkedIn:
-> https://linkedin.com/in/your-profile
+> LinkedIn: https://linkedin.com/in/studyhaxer
 
 ---
 
