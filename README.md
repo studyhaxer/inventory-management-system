@@ -6,28 +6,28 @@ This project is being developed following real-world software engineering practi
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
-## Authentication & Authorization
+### Authentication & Authorization
 - JWT Authentication
 - Secure Password Hashing (bcrypt)
 - Role-Based Access Control (Admin, Manager, Staff)
 - Protected API Routes
 
-## User Management
+### User Management
 - User Registration
 - User Login
 - View User Profile
 - Update User Profile
 - Manage User Roles
 
-## Category Management
+### Category Management
 - Create Categories
 - View Categories
 - Update Categories
 - Delete Categories
 
-## Product Management
+### Product Management
 - Add Products
 - Update Product Information
 - Delete Products
@@ -35,28 +35,28 @@ This project is being developed following real-world software engineering practi
 - SKU Management
 - Stock Tracking
 
-## Supplier Management
+### Supplier Management *(planned)*
 - Add Suppliers
 - Update Supplier Information
 - Delete Suppliers
 - Supplier Listing
 
-## Purchase Management
+### Purchase Management *(planned)*
 - Record Purchases
 - Purchase Items
 - Automatic Stock Increment
 
-## Sales Management
+### Sales Management *(planned)*
 - Record Sales
 - Sale Items
 - Automatic Stock Deduction
 
-## Inventory
+### Inventory *(planned)*
 - Current Stock Levels
 - Low Stock Alerts
 - Inventory Reports
 
-## Dashboard
+### Dashboard *(planned)*
 - Total Products
 - Total Categories
 - Total Suppliers
@@ -66,9 +66,9 @@ This project is being developed following real-world software engineering practi
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
-## Backend
+### Backend
 - FastAPI
 - SQLAlchemy ORM
 - PostgreSQL
@@ -77,17 +77,17 @@ This project is being developed following real-world software engineering practi
 - JWT Authentication
 - Passlib (bcrypt)
 
-## Frontend
+### Frontend
 - React
 - Vite
 - React Router
 - Axios
 - Tailwind CSS
 
-## Database
+### Database
 - PostgreSQL
 
-## Development Tools
+### Development Tools
 - Git
 - GitHub
 - VS Code
@@ -95,11 +95,10 @@ This project is being developed following real-world software engineering practi
 
 ---
 
-# 📂 Project Structure
+## 📁 Project Structure
 
 ```
 inventory-management-system/
-│
 ├── backend/
 │   ├── app/
 │   │   ├── core/
@@ -113,21 +112,17 @@ inventory-management-system/
 │   │   ├── config.py
 │   │   ├── database.py
 │   │   └── main.py
-│   │
 │   ├── .env
 │   └── requirements.txt
-│
 ├── frontend/
-│
 ├── docs/
-│
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-# 🗄 Database Entities
+## 🗄 Database Entities
 
 - Users
 - Categories
@@ -138,9 +133,7 @@ inventory-management-system/
 - Sales
 - Sale Items
 
----
-
-# 🔗 Entity Relationships
+## 🔗 Entity Relationships
 
 - One Category → Many Products
 - One Supplier → Many Purchases
@@ -149,168 +142,133 @@ inventory-management-system/
 - One Sale → Many Sale Items
 - One Product → Many Sale Items
 
----
+## 🔐 User Roles
 
-# 🔐 User Roles
-
-| Role | Permissions |
-|-------|-------------|
-| Admin | Full system access |
+| Role    | Permissions                          |
+|---------|----------------------------------------|
+| Admin   | Full system access                     |
 | Manager | Manage inventory, purchases, and sales |
-| Staff | Limited inventory operations |
+| Staff   | Limited inventory operations           |
 
 ---
 
-# ⚙ Installation
+## ⚙️ Installation
 
-## Clone Repository
-
+### Clone Repository
 ```bash
 git clone https://github.com/studyhaxer/inventory-management-system.git
-```
-
-```
 cd inventory-management-system
 ```
 
----
-
-## Backend Setup
+### Backend Setup
 
 Create virtual environment
-
 ```bash
 python -m venv venv
 ```
 
 Activate virtual environment
 
-### Windows
-
+**Windows**
 ```bash
 venv\Scripts\activate
 ```
 
-### Linux / macOS
-
+**Linux / macOS**
 ```bash
 source venv/bin/activate
 ```
 
 Install dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
 
----
+### Configure Environment Variables
 
-# Configure Environment Variables
-
-Create a `.env` file inside the backend folder.
-
-```env
+Create a `.env` file inside the `backend` folder.
+```
 DATABASE_URL=postgresql://username:password@localhost/inventory_db
 SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
 
----
-
-# Run the Backend
-
+### Run the Backend
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Server
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger Documentation
-
-```
-http://127.0.0.1:8000/docs
-```
-
-Redoc
-
-```
-http://127.0.0.1:8000/redoc
-```
+- Server: `http://127.0.0.1:8000`
+- Swagger Documentation: `http://127.0.0.1:8000/docs`
+- ReDoc: `http://127.0.0.1:8000/redoc`
 
 ---
 
-# 🗺 Development Roadmap
+## 🗺 Development Roadmap
 
-## Phase 1
+### Phase 1
 - [x] Project Setup
 - [x] Database Design
 - [x] PostgreSQL Configuration
 - [x] SQLAlchemy Setup
 
-## Phase 2
-- [ ] User Authentication
-- [ ] JWT Login
-- [ ] Role-Based Authorization
+### Phase 2
+- [x] User Authentication
+- [x] JWT Login
+- [x] Role-Based Authorization
 
-## Phase 3
-- [ ] Category Module
+### Phase 3
+- [x] Category Module
 
-## Phase 4
-- [ ] Product Module
+### Phase 4
+- [x] Product Module
 
-## Phase 5
+### Phase 5
 - [ ] Supplier Module
 
-## Phase 6
+### Phase 6
 - [ ] Purchase Module
 
-## Phase 7
+### Phase 7
 - [ ] Sales Module
 
-## Phase 8
+### Phase 8
 - [ ] Inventory Reports
 
-## Phase 9
+### Phase 9
 - [ ] Dashboard APIs
 
-## Phase 10
+### Phase 10
 - [ ] React Frontend
 
 ---
 
-# 📖 API Documentation
+## 📖 API Documentation
 
 Interactive API documentation is available after running the server.
 
-Swagger UI
-
+**Swagger UI**
 ```
 /docs
 ```
 
-ReDoc
-
+**ReDoc**
 ```
 /redoc
 ```
 
 ---
 
-# 🧪 Testing
+## 🧪 Testing
 
 API testing will be performed using:
-
 - Swagger UI
 - Postman
 
 ---
 
-# 📈 Future Improvements
+## 📈 Future Improvements
 
 - Barcode Scanner Support
 - Image Upload for Products
@@ -323,48 +281,38 @@ API testing will be performed using:
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome.
 
 1. Fork the repository
 2. Create a feature branch
-
 ```bash
 git checkout -b feature/your-feature
 ```
-
 3. Commit your changes
-
 ```bash
 git commit -m "Add new feature"
 ```
-
 4. Push to GitHub
-
 ```bash
 git push origin feature/your-feature
 ```
-
 5. Create a Pull Request
 
 ---
 
-# 👨‍💻 Author
+## 👤 Author
 
 **Hafiz Atta Ur Rahman**
-
 Backend Developer | Python | FastAPI | React
 
-GitHub:
-> GitHub: https://github.com/studyhaxer
-
-LinkedIn:
-> LinkedIn: https://linkedin.com/in/studyhaxer
+- GitHub: https://github.com/studyhaxer
+- LinkedIn: https://linkedin.com/in/studyhaxer
 
 ---
 
-# 📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
 
