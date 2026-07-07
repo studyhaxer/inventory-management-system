@@ -21,13 +21,13 @@ This project is being developed following real-world software engineering practi
 - Update User Profile
 - Manage User Roles
 
-### Category Management
+### Category Management *(planned)*
 - Create Categories
 - View Categories
 - Update Categories
 - Delete Categories
 
-### Product Management
+### Product Management *(planned)*
 - Add Products
 - Update Product Information
 - Delete Products
@@ -186,7 +186,7 @@ pip install -r requirements.txt
 
 ### Configure Environment Variables
 
-Create a `.env` file inside the `backend` folder.
+Create a `.env` file inside `backend/app/` (this is the path used by `docker-compose.yml` and `.gitignore`).
 ```
 DATABASE_URL=postgresql://username:password@localhost/inventory_db
 SECRET_KEY=your_secret_key
@@ -195,8 +195,15 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
 
 ### Run the Backend
+
+**Locally**, from `backend/`:
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --app-dir app --reload
+```
+
+**With Docker** (also starts PostgreSQL and the frontend), from the project root:
+```bash
+docker-compose up --build
 ```
 
 - Server: `http://127.0.0.1:8000`
@@ -219,10 +226,10 @@ uvicorn app.main:app --reload
 - [x] Role-Based Authorization
 
 ### Phase 3
-- [x] Category Module
+- [ ] Category Module
 
 ### Phase 4
-- [x] Product Module
+- [ ] Product Module
 
 ### Phase 5
 - [ ] Supplier Module
