@@ -1,0 +1,26 @@
+
+
+services:
+  backend:
+    build: ./backend
+    container_name: inventory_backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/app/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    container_name: inventory_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    command: npm run dev -- --host
