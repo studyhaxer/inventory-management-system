@@ -226,7 +226,11 @@ docker-compose up --build
 - [x] Role-Based Authorization
 
 ### Phase 3
-- [ ] Category Module
+- [x] ERD-based SQLAlchemy models (Category, Product, Supplier, Purchase, PurchaseItem, Sale, SaleItem)
+- [x] Alembic initialized and wired to Base.metadata
+- [x] First migration generated, reviewed, and applied to Supabase Postgres
+- [ ] Category & Supplier CRUD endpoints
+- [ ] Request validation & search filtering
 
 ### Phase 4
 - [ ] Product Module

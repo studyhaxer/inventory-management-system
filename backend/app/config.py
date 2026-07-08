@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
+import os
 
 class Settings(BaseSettings):
     ENV: str = "development"
@@ -11,7 +11,10 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
 
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(
+    env_file=os.path.join(os.path.dirname(__file__), ".env"),
+    env_file_encoding="utf-8",
+)
 
     def validate_production(self):
         """Fail fast if required secrets are missing in production."""
