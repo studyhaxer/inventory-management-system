@@ -228,7 +228,7 @@ docker-compose up --build
 ### Phase 3
 - [x] ERD-based SQLAlchemy models (Category, Product, Supplier, Purchase, PurchaseItem, Sale, SaleItem)
 - [x] Alembic initialized and wired to Base.metadata
-- [x] First migration generated, reviewed, and applied to Supabase Postgres
+- [x] Initial migrations generated, reviewed, and applied to Supabase Postgres (core inventory tables + users table)
 - [ ] Category & Supplier CRUD endpoints
 - [ ] Request validation & search filtering
 
