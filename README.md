@@ -21,9 +21,9 @@ This project is being developed following real-world software engineering practi
 - Update User Profile
 - Manage User Roles
 
-### Category Management *(planned)*
+### Category Management
 - Create Categories
-- View Categories
+- View Categories (with search & pagination)
 - Update Categories
 - Delete Categories
 
@@ -35,11 +35,11 @@ This project is being developed following real-world software engineering practi
 - SKU Management
 - Stock Tracking
 
-### Supplier Management *(planned)*
+### Supplier Management
 - Add Suppliers
+- View Suppliers (with search & pagination)
 - Update Supplier Information
 - Delete Suppliers
-- Supplier Listing
 
 ### Purchase Management *(planned)*
 - Record Purchases
@@ -229,8 +229,8 @@ docker-compose up --build
 - [x] ERD-based SQLAlchemy models (Category, Product, Supplier, Purchase, PurchaseItem, Sale, SaleItem)
 - [x] Alembic initialized and wired to Base.metadata
 - [x] Initial migrations generated, reviewed, and applied to Supabase Postgres (core inventory tables + users table)
-- [ ] Category & Supplier CRUD endpoints
-- [ ] Request validation & search filtering
+- [x] Category & Supplier CRUD endpoints
+- [x] Request validation & search filtering
 
 ### Phase 4
 - [ ] Product Module
