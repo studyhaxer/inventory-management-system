@@ -239,7 +239,7 @@ docker-compose up --build
 - [x] Unique SKU and category_id reference validation
 
 ### Phase 5
-- [ ] Supplier Module
+- [x] Supplier Module (completed under Phase 3 alongside Category Module)
 
 ### Phase 6
 - [ ] Purchase Module
