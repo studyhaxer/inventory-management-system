@@ -27,13 +27,13 @@ This project is being developed following real-world software engineering practi
 - Update Categories
 - Delete Categories
 
-### Product Management *(planned)*
+### Product Management
 - Add Products
+- View Products (search, filter by category/price/stock, pagination)
 - Update Product Information
 - Delete Products
-- Product Search
-- SKU Management
-- Stock Tracking
+- Unique SKU Enforcement
+- Category Reference Validation
 
 ### Supplier Management
 - Add Suppliers
@@ -233,7 +233,10 @@ docker-compose up --build
 - [x] Request validation & search filtering
 
 ### Phase 4
-- [ ] Product Module
+- [x] Product CRUD endpoints (create, list, get, update, delete)
+- [x] Filtering (category, price range, stock status) and search (name/SKU)
+- [x] Pagination (skip/limit) matching Category/Supplier pattern
+- [x] Unique SKU and category_id reference validation
 
 ### Phase 5
 - [ ] Supplier Module
