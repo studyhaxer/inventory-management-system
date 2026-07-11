@@ -41,15 +41,17 @@ This project is being developed following real-world software engineering practi
 - Update Supplier Information
 - Delete Suppliers
 
-### Purchase Management *(planned)*
-- Record Purchases
+### Purchase Management
+- Record Purchases (with one or more line items)
 - Purchase Items
-- Automatic Stock Increment
+- Automatic Stock Increment (atomic transaction per request)
+- Supplier & Product Reference Validation
 
-### Sales Management *(planned)*
-- Record Sales
+### Sales Management
+- Record Sales (with one or more line items)
 - Sale Items
-- Automatic Stock Deduction
+- Automatic Stock Deduction (atomic transaction per request)
+- Insufficient-Stock Rejection (whole sale rejected, no partial writes)
 
 ### Inventory *(planned)*
 - Current Stock Levels
@@ -242,10 +244,10 @@ docker-compose up --build
 - [x] Supplier Module (completed under Phase 3 alongside Category Module)
 
 ### Phase 6
-- [ ] Purchase Module
+- [x] Purchase Module (schemas, CRUD endpoints, atomic stock increment, supplier/product validation)
 
 ### Phase 7
-- [ ] Sales Module
+- [x] Sales Module (schemas, CRUD endpoints, atomic stock decrement, insufficient-stock rejection)
 
 ### Phase 8
 - [ ] Inventory Reports
