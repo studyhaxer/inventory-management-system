@@ -58,13 +58,10 @@ This project is being developed following real-world software engineering practi
 - Low Stock Alerts
 - Inventory Reports
 
-### Dashboard *(planned)*
-- Total Products
-- Total Categories
-- Total Suppliers
-- Total Sales
-- Total Purchases
-- Stock Summary
+### Dashboard & Reports
+- Store-Wide Summary (products, categories, suppliers, stock units, stock value, purchases, sales, revenue)
+- Low-Stock Alerts (configurable threshold, sorted lowest first)
+- Top-Selling Products (ranked by quantity sold, with revenue)
 
 ---
 
@@ -253,7 +250,7 @@ docker-compose up --build
 - [ ] Inventory Reports
 
 ### Phase 9
-- [ ] Dashboard APIs
+- [x] Dashboard APIs (summary, low-stock, top-products endpoints with SQL aggregates)
 
 ### Phase 10
 - [ ] React Frontend
