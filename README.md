@@ -80,8 +80,8 @@ This project is being developed following real-world software engineering practi
 - React
 - Vite
 - React Router
-- Axios
-- Tailwind CSS
+- Native Fetch API (thin wrapper in `api/client.js`)
+- Hand-written CSS (design tokens in `index.css`)
 
 ### Database
 - PostgreSQL
@@ -253,7 +253,10 @@ docker-compose up --build
 - [x] Dashboard APIs (summary, low-stock, top-products endpoints with SQL aggregates)
 
 ### Phase 10
-- [ ] React Frontend
+- [x] React Frontend — Auth UI (login, register, JWT session handling, protected routes)
+- [x] React Frontend — Dashboard summary UI (store-wide summary cards)
+- [ ] React Frontend — CRUD UI (products, categories, suppliers, purchases, sales)
+- [ ] React Frontend — Low-stock alerts & top-selling products views
 
 ---
 
