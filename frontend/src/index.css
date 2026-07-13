@@ -1,111 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --color-bg: #F4F5F1;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C2420;
+  --color-ink-soft: #5B6560;
+  --color-ink-faint: #8A9089;
+  --color-primary: #1F6F5C;
+  --color-primary-dark: #164F42;
+  --color-primary-tint: #E4F0EC;
+  --color-accent: #C7742A;
+  --color-accent-tint: #FBEEE1;
+  --color-danger: #B3432F;
+  --color-danger-tint: #FBE9E5;
+  --color-border: #DCE1DB;
+  --color-border-strong: #C3CBC1;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --radius: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+* { box-sizing: border-box; }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
+html, body, #root { height: 100%; }
 
 body {
   margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; }
+
+button { font-family: inherit; cursor: pointer; }
+
+input, select {
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+/* ---------- Auth pages ---------- */
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 860px) {
+  .auth-shell { grid-template-columns: 1fr; }
+  .auth-brand { display: none; }
+}
+
+.auth-brand {
+  background: var(--color-primary-dark);
+  color: #EAF3EF;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 3rem;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
+.auth-brand-mark {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.auth-brand-mark span { color: #7FBFAA; }
+
+.auth-brand-tagline {
+  font-family: var(--font-display);
+  font-size: 32px;
   font-weight: 500;
-  color: var(--text-h);
+  line-height: 1.25;
+  max-width: 22ch;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+.auth-brand-foot {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #9CC5B7;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
-h2 {
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 360px;
+}
+
+.auth-card h1 {
   font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  margin-bottom: 0.35rem;
 }
-p {
+
+.auth-subtitle {
+  color: var(--color-ink-soft);
+  font-size: 14px;
+  margin-bottom: 1.75rem;
+}
+
+.form-field {
+  margin-bottom: 1.1rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-tint);
+}
+
+.form-error {
+  background: var(--color-danger-tint);
+  color: var(--color-danger);
+  font-size: 13px;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.auth-card button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+
+.auth-card button[type="submit"]:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.auth-card button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.auth-card p {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  margin-top: 1.5rem;
+}
+
+.auth-card a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-card a:hover { text-decoration: underline; }
+
+/* ---------- Dashboard ---------- */
+
+.dashboard-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-header h1 {
+  font-size: 22px;
+}
+
+.dashboard-header-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard-user span {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  font-family: var(--font-mono);
+}
+
+.dashboard-user button {
+  padding: 0.5rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.dashboard-user button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.dashboard-section {
+  margin-bottom: 2.25rem;
+}
+
+.dashboard-section-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-faint);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.summary-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+
+.summary-card.is-warning {
+  border-color: var(--color-accent);
+  background: var(--color-accent-tint);
+}
+
+.summary-card-label {
+  font-size: 12px;
+  color: var(--color-ink-soft);
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.summary-card-value {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-ink);
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.summary-card.is-warning .summary-card-value {
+  color: var(--color-accent);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.dashboard-state {
+  max-width: 980px;
+  margin: 4rem auto;
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-family: var(--font-mono);
+  font-size: 14px;
 }
