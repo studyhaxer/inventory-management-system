@@ -39,9 +39,12 @@ def login(payload: UserLogin, db: Session = Depends(get_db)):
     token = create_access_token({"sub": str(user.id), "role": user.role})
     return {"access_token": token, "token_type": "bearer"}
 
-@router.get("/me")
-def read_current_user(user=Depends(get_current_user)):
-    return {"user_id": user.get("sub"), "role": user.get("role")}
+@router.get("/me", response_model=UserOut)
+def read_current_user(user=Depends(get_current_user), db: Session = Depends(get_db)):
+    db_user = db.query(User).filter(User.id == int(user.get("sub"))).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return db_user
 
 
 @router.get("/admin-only")
