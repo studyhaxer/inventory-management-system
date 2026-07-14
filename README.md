@@ -255,7 +255,7 @@ docker-compose up --build
 ### Phase 10
 - [x] React Frontend — Auth UI (login, register, JWT session handling, protected routes)
 - [x] React Frontend — Dashboard summary UI (store-wide summary cards)
-- [ ] React Frontend — CRUD UI (products, categories, suppliers, purchases, sales)
+- [x] React Frontend — CRUD UI (categories, suppliers, products)
 - [ ] React Frontend — Low-stock alerts & top-selling products views
 
 ---
