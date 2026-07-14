@@ -1,9 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AppLayout from "./components/AppLayout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import CategoriesPage from "./pages/CategoriesPage";
+import SuppliersPage from "./pages/SuppliersPage";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   return (
@@ -12,11 +16,14 @@ function App() {
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
         <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route element={<AppLayout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/categories" element={<CategoriesPage />} />
+            <Route path="/suppliers" element={<SuppliersPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+          </Route>
         </Route>
-
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </AuthProvider>

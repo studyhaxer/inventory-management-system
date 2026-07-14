@@ -21,9 +21,28 @@ async function request(path, { method = "GET", body, token } = {}) {
   return data;
 }
 
+function toQueryString(params = {}) {
+  const parts = Object.entries(params)
+    .filter(([, v]) => v !== undefined && v !== null && v !== "")
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`);
+  return parts.length ? `?${parts.join("&")}` : "";
+}
+
+function crud(resource) {
+  return {
+    list: (token, params) => request(`/${resource}${toQueryString(params)}`, { token }),
+    create: (token, payload) => request(`/${resource}`, { method: "POST", body: payload, token }),
+    update: (token, id, payload) => request(`/${resource}/${id}`, { method: "PUT", body: payload, token }),
+    remove: (token, id) => request(`/${resource}/${id}`, { method: "DELETE", token }),
+  };
+}
+
 export const api = {
   register: (payload) => request("/auth/register", { method: "POST", body: payload }),
   login: (payload) => request("/auth/login", { method: "POST", body: payload }),
   me: (token) => request("/auth/me", { token }),
   dashboardSummary: (token) => request("/dashboard/summary", { token }),
+  categories: crud("categories"),
+  suppliers: crud("suppliers"),
+  products: crud("products"),
 };

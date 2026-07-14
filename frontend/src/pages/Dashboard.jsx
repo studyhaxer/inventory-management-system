@@ -37,14 +37,10 @@ export default function Dashboard() {
     <div className="dashboard-page">
       <header className="dashboard-header">
         <div>
-          <p className="dashboard-header-eyebrow">Overview</p>
+           <p className="dashboard-header-eyebrow">Overview</p>
           <h1>Dashboard</h1>
         </div>
-        <div className="dashboard-user">
-          {user?.email && <span>{user.email}</span>}
-          <button onClick={logout}>Log out</button>
-        </div>
-      </header>
+    </header>
 
       <section className="dashboard-section">
         <p className="dashboard-section-title">Inventory</p>
