@@ -3,7 +3,7 @@ import { useAuth } from "../context/useAuth";
 import { api } from "../api/client";
 
 export default function Dashboard() {
-  const { token, user, logout } = useAuth();
+  const { token } = useAuth();
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
