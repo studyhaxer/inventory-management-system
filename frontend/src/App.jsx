@@ -8,6 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import CategoriesPage from "./pages/CategoriesPage";
 import SuppliersPage from "./pages/SuppliersPage";
 import ProductsPage from "./pages/ProductsPage";
+import PurchasesPage from "./pages/PurchasesPage";
+import SalesPage from "./pages/SalesPage";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/suppliers" element={<SuppliersPage />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/purchases" element={<PurchasesPage />} />
+            <Route path="/sales" element={<SalesPage />} />
           </Route>
         </Route>
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

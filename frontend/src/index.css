@@ -526,6 +526,63 @@ input, select {
   gap: 0.6rem;
   margin-top: 1.4rem;
 }
+
+/* ---------- Purchases / Sales line items ---------- */
+.modal-card--wide { max-width: 640px; }
+
+.line-items-header,
+.line-items-row {
+  display: grid;
+  grid-template-columns: 2fr 90px 110px 110px 32px;
+  gap: 0.6rem;
+  align-items: center;
+}
+.line-items-header {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-ink-faint);
+  margin-bottom: 0.4rem;
+}
+.line-items-row { margin-bottom: 0.5rem; }
+.line-items-row input,
+.line-items-row select {
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+.line-item-remove {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  font-size: 18px;
+  line-height: 1;
+  padding: 0.2rem;
+}
+.line-item-remove:hover { opacity: 0.7; }
+.line-item-remove:disabled { opacity: 0.3; cursor: default; }
+.line-items-add {
+  margin-top: 0.3rem;
+}
+.line-items-total {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 15px;
+}
+.line-items-total strong { font-family: var(--font-display); }
+.data-table .line-items-summary {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
 .dashboard-state {
   max-width: 980px;
   margin: 4rem auto;

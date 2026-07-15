@@ -6,6 +6,8 @@ const NAV_LINKS = [
   { to: "/categories", label: "Categories" },
   { to: "/suppliers", label: "Suppliers" },
   { to: "/products", label: "Products" },
+  { to: "/purchases", label: "Purchases" },
+  { to: "/sales", label: "Sales" },
 ];
 
 export default function AppLayout() {

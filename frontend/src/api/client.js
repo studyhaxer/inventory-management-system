@@ -37,12 +37,27 @@ function crud(resource) {
   };
 }
 
+// Purchases and sales are append-only ledger endpoints: the backend only
+// exposes list, get-by-id, and create — there's no update/delete, so this
+// intentionally does NOT reuse crud() above (which assumes both exist).
+function ledger(resource) {
+  return {
+    list: (token, params) => request(`/${resource}${toQueryString(params)}`, { token }),
+    get: (token, id) => request(`/${resource}/${id}`, { token }),
+    create: (token, payload) => request(`/${resource}`, { method: "POST", body: payload, token }),
+  };
+}
+
 export const api = {
   register: (payload) => request("/auth/register", { method: "POST", body: payload }),
   login: (payload) => request("/auth/login", { method: "POST", body: payload }),
   me: (token) => request("/auth/me", { token }),
   dashboardSummary: (token) => request("/dashboard/summary", { token }),
+  dashboardTopProducts: (token) => request("/dashboard/top-products", { token }),
+  dashboardLowStock: (token) => request("/dashboard/low-stock", { token }),
   categories: crud("categories"),
   suppliers: crud("suppliers"),
   products: crud("products"),
+  purchases: ledger("purchases"),
+  sales: ledger("sales"),
 };
