@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel, Field
 
 
@@ -25,6 +27,7 @@ class PurchaseCreate(BaseModel):
 class PurchaseOut(BaseModel):
     id: int
     supplier_id: int
+    created_at: datetime
     items: list[PurchaseItemOut]
 
     class Config:
