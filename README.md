@@ -256,6 +256,7 @@ docker-compose up --build
 - [x] React Frontend — Auth UI (login, register, JWT session handling, protected routes)
 - [x] React Frontend — Dashboard summary UI (store-wide summary cards)
 - [x] React Frontend — CRUD UI (categories, suppliers, products)
+- [x] React Frontend — Purchases & Sales CRUD UI (append-only ledger views, dynamic line-item forms)
 - [ ] React Frontend — Low-stock alerts & top-selling products views
 
 ---
