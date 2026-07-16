@@ -257,7 +257,7 @@ docker-compose up --build
 - [x] React Frontend — Dashboard summary UI (store-wide summary cards)
 - [x] React Frontend — CRUD UI (categories, suppliers, products)
 - [x] React Frontend — Purchases & Sales CRUD UI (append-only ledger views, dynamic line-item forms)
-- [ ] React Frontend — Low-stock alerts & top-selling products views
+- [x] React Frontend — Low-stock alerts & top-selling products views (CSS bar chart, low-stock panel, responsive layout across nav/cards/tables)
 
 ---
 
@@ -279,22 +279,26 @@ Interactive API documentation is available after running the server.
 
 ## 🧪 Testing
 
-API testing will be performed using:
+API and UI testing has been performed manually using:
 - Swagger UI
 - Postman
+- Manual browser verification (including responsive/mobile-width checks)
+
+Automated testing (pytest suite) was scoped for this project but not implemented before closing out — see **Future Improvements** below.
 
 ---
 
 ## 📈 Future Improvements
 
+- Automated Testing (pytest suite: auth, RBAC, CRUD, purchase/sale stock side-effects, dashboard aggregates)
+- Docker Compose Polish (service healthchecks, dependency ordering)
+- Inventory Reports (Phase 8)
 - Barcode Scanner Support
 - Image Upload for Products
 - Export Reports (PDF/Excel)
 - Email Notifications
 - Audit Logs
-- Docker Deployment
 - CI/CD Pipeline
-- Unit & Integration Testing
 
 ---
 
@@ -337,6 +341,8 @@ This project is licensed under the MIT License.
 
 ## ⭐ Project Status
 
-🚧 **Currently Under Active Development**
+✅ **Core Feature-Complete — Closed for Active Development**
 
-This project is being developed incrementally following a structured internship-style roadmap. New features and improvements are added daily as part of the learning and development process.
+This project was built incrementally as a structured, internship-style learning exercise covering full-stack development with FastAPI, PostgreSQL, and React: authentication and RBAC, full CRUD across all core resources, atomic purchase/sale stock transactions, dashboard aggregates with a live UI (summary, top-selling products, low-stock alerts), and a responsive frontend.
+
+It is being closed out at this stage as a complete, working reference project. Automated testing, Docker Compose polish, and the items above under **Future Improvements** were scoped during development but intentionally left for a future pass rather than blocking closure of this iteration.
